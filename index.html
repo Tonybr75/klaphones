@@ -3,152 +3,456 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Brave Phones Kampala | Quality Smartphones</title>
+  <title>Brave Phones Kampala | Premium Smartphones</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       line-height: 1.6;
-      background: #f5f5f5;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: #333;
     }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header */
     header {
-      background: #0d6efd;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
-      padding: 20px;
+      padding: 60px 20px;
       text-align: center;
+      position: relative;
+      overflow: hidden;
     }
-    section {
-      padding: 30px 20px;
-      max-width: 1000px;
-      margin: auto;
+    
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none"/><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>');
+      opacity: 0.3;
     }
-    h2 {
-      color: #0d6efd;
+    
+    header h1 {
+      font-size: 3rem;
+      font-weight: 800;
       margin-bottom: 10px;
+      position: relative;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
     }
-    .services, .prices {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 15px;
+    
+    header p {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+      position: relative;
+      opacity: 0.95;
     }
-    .card {
-      background: white;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 10px;
-    }
-    .gallery img {
-      width: 100%;
-      border-radius: 8px;
-    }
-    .btn {
+    
+    .whatsapp-btn {
       display: inline-block;
       background: #25D366;
       color: white;
-      padding: 12px 20px;
-      border-radius: 5px;
+      padding: 16px 32px;
+      border-radius: 50px;
       text-decoration: none;
-      font-weight: bold;
-    }
-    iframe {
-      width: 100%;
-      border-radius: 8px;
-      border: none;
-    }
-    footer {
-      background: #222;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      font-size: 14px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+      transition: all 0.3s ease;
+      position: relative;
     }
     
-    @media (max-width: 600px) {
-  header h1 {
-    font-size: 22px;
-  }
-  header p {
-    font-size: 14px;
-  }
-  section {
-    padding: 20px 15px;
-  }
-  .btn {
-    display: block;
-    text-align: center;
-    margin-top: 10px;
-  }
-}
-
+    .whatsapp-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+    }
+    
+    /* Main Content */
+    main {
+      background: #f8f9fa;
+      padding-bottom: 40px;
+    }
+    
+    section {
+      padding: 50px 20px;
+    }
+    
+    .section-white {
+      background: white;
+      margin: 30px 0;
+      border-radius: 20px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+    }
+    
+    h2 {
+      color: #667eea;
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      text-align: center;
+      font-weight: 700;
+    }
+    
+    /* Services */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+    
+    .service-card {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    }
+    
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    }
+    
+    .service-card .icon {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+    
+    .service-card h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+    
+    /* Phone Gallery */
+    .phone-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    
+    .phone-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .phone-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    }
+    
+    .phone-card img {
+      width: 100%;
+      height: 280px;
+      object-fit: contain;
+      background: #f8f9fa;
+      padding: 20px;
+    }
+    
+    .phone-info {
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .phone-info h3 {
+      font-size: 1.3rem;
+      color: #333;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    
+    .phone-price {
+      font-size: 1.5rem;
+      color: #667eea;
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+    
+    .phone-features {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 15px;
+      line-height: 1.8;
+    }
+    
+    .order-btn {
+      display: inline-block;
+      background: #25D366;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .order-btn:hover {
+      background: #1fb855;
+      transform: scale(1.05);
+    }
+    
+    /* About & Contact */
+    .about-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 1.1rem;
+      color: #555;
+      line-height: 1.8;
+    }
+    
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+    
+    .contact-card {
+      background: #f8f9fa;
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+      border: 2px solid #e9ecef;
+    }
+    
+    .contact-card .icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+    
+    .contact-card h3 {
+      color: #667eea;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+    
+    .contact-card p {
+      color: #666;
+      font-size: 1rem;
+    }
+    
+    /* Map */
+    .map-container {
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      margin-top: 30px;
+    }
+    
+    .map-container iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+    }
+    
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 40px;
+    }
+    
+    footer p {
+      margin: 5px 0;
+      opacity: 0.9;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      
+      header p {
+        font-size: 1rem;
+      }
+      
+      h2 {
+        font-size: 1.8rem;
+      }
+      
+      .phone-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>Brave Phones Kampala</h1>
-  <p>Affordable Smartphones | UK Used & Brand New | Delivery Available</p>
-  <a class="btn" href="https://wa.me/256700000000">📲 Order on WhatsApp</a>
+  <div class="container">
+    <h1>📱 Brave Phones Kampala</h1>
+    <p>Premium Quality Smartphones | UK Used & Brand New | Fast Delivery Across Uganda</p>
+    <a class="whatsapp-btn" href="https://wa.me/256700000000">💬 Order on WhatsApp</a>
+  </div>
 </header>
 
-<section>
-  <h2>About Us</h2>
-  <p>
-    Brave Phones Kampala provides high-quality smartphones at affordable prices.
-    We sell UK used and brand new phones with warranty and accessories.
-    Located in Kampala, we serve customers across Uganda.
-  </p>
-</section>
+<main>
+  <!-- About Section -->
+  <section class="section-white">
+    <div class="container">
+      <h2>Why Choose Brave Phones?</h2>
+      <div class="about-content">
+        <p>
+          Your trusted source for premium smartphones in Kampala. We specialize in UK used and brand new phones
+          with genuine warranties and complete accessories. Every device is thoroughly tested and certified
+          to ensure you get the best value for your money. With same-day delivery in Kampala and nationwide shipping,
+          getting your dream phone has never been easier!
+        </p>
+      </div>
+    </div>
+  </section>
 
-<section>
-  <h2>Our Services</h2>
-  <div class="services">
-    <div class="card">📱 Smartphone Sales</div>
-    <div class="card">🔧 Phone Repairs</div>
-    <div class="card">🔋 Accessories</div>
-    <div class="card">🚚 Delivery Services</div>
-  </div>
-</section>
+  <!-- Services Section -->
+  <section>
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="services">
+        <div class="service-card">
+          <div class="icon">📱</div>
+          <h3>Premium Smartphones</h3>
+          <p>Latest models & accessories</p>
+        </div>
+        <div class="service-card">
+          <div class="icon">🔧</div>
+          <h3>Phone Repairs</h3>
+          <p>Expert technicians</p>
+        </div>
+        <div class="service-card">
+          <div class="icon">✅</div>
+          <h3>Warranty Included</h3>
+          <p>100% genuine guarantee</p>
+        </div>
+        <div class="service-card">
+          <div class="icon">🚚</div>
+          <h3>Fast Delivery</h3>
+          <p>Same day in Kampala</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section>
-  <h2>Price List</h2>
-  <div class="prices">
-    <div class="card">iPhone 11 – 850,000 UGX</div>
-    <div class="card">Samsung A14 – 650,000 UGX</div>
-    <div class="card">Redmi Note 12 – 700,000 UGX</div>
-    <div class="card">Tecno Camon 20 – 550,000 UGX</div>
-  </div>
-</section>
+  <!-- Featured Phones -->
+  <section class="section-white">
+    <div class="container">
+      <h2>Featured Phones</h2>
+      <div class="phone-grid">
+        
+        <div class="phone-card">
+          <img src="https://images.unsplash.com/photo-1592286927505-38b4e8ea8c34?w=400&h=400&fit=crop" alt="iPhone 11">
+          <div class="phone-info">
+            <h3>iPhone 11</h3>
+            <div class="phone-price">850,000 UGX</div>
+            <div class="phone-features">
+              64GB/128GB • 6.1" Display<br>
+              Dual Camera • Face ID
+            </div>
+            <a href="https://wa.me/256700000000?text=I'm interested in iPhone 11" class="order-btn">Order Now</a>
+          </div>
+        </div>
 
-<section>
-  <h2>Phone Gallery</h2>
-  <div class="gallery">
-    <img src="images/phone1.jpg" alt="Phone 1">
-    <img src="images/phone2.jpg" alt="Phone 2">
-    <img src="images/phone3.jpg" alt="Phone 3">
-    <img src="images/phone4.jpg" alt="Phone 4">
-  </div>
-</section>
+        <div class="phone-card">
+          <img src="https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=400&h=400&fit=crop" alt="Samsung Galaxy A14">
+          <div class="phone-info">
+            <h3>Samsung Galaxy A14</h3>
+            <div class="phone-price">650,000 UGX</div>
+            <div class="phone-features">
+              128GB • 6.6" Display<br>
+              50MP Camera • 5000mAh Battery
+            </div>
+            <a href="https://wa.me/256700000000?text=I'm interested in Samsung A14" class="order-btn">Order Now</a>
+          </div>
+        </div>
 
-<section>
-  <h2>Find Us</h2>
-  <!-- Replace with client's Google Maps embed -->
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18..." height="300"></iframe>
-</section>
+        <div class="phone-card">
+          <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400&h=400&fit=crop" alt="Redmi Note 12">
+          <div class="phone-info">
+            <h3>Redmi Note 12</h3>
+            <div class="phone-price">700,000 UGX</div>
+            <div class="phone-features">
+              128GB • 6.67" AMOLED<br>
+              48MP Camera • Fast Charging
+            </div>
+            <a href="https://wa.me/256700000000?text=I'm interested in Redmi Note 12" class="order-btn">Order Now</a>
+          </div>
+        </div>
 
-<section>
-  <h2>Contact Us</h2>
-  <!-- Replace with client's Google Form embed -->
-  <iframe src="https://docs.google.com/forms/d/e/FORM_ID/viewform?embedded=true" height="500"></iframe>
-</section>
+        <div class="phone-card">
+          <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=400&fit=crop" alt="Tecno Camon 20">
+          <div class="phone-info">
+            <h3>Tecno Camon 20</h3>
+            <div class="phone-price">550,000 UGX</div>
+            <div class="phone-features">
+              256GB • 6.67" Display<br>
+              64MP Camera • 5000mAh
+            </div>
+            <a href="https://wa.me/256700000000?text=I'm interested in Tecno Camon 20" class="order-btn">Order Now</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section-white">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <div class="contact-info">
+        <div class="contact-card">
+          <div class="icon">📞</div>
+          <h3>Phone</h3>
+          <p>+256 700 000 000</p>
+        </div>
+        <div class="contact-card">
+          <div class="icon">💬</div>
+          <h3>WhatsApp</h3>
+          <p>Message us anytime</p>
+        </div>
+        <div class="contact-card">
+          <div class="icon">📍</div>
+          <h3>Location</h3>
+          <p>Kampala, Uganda</p>
+        </div>
+      </div>
+      
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127641.98304857362!2d32.52296384999999!3d0.31561365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbb8679c6f7c9%3A0x50893810f2544238!2sKampala%2C%20Uganda!5e0!3m2!1sen!2s!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
 
 <footer>
-  © 2026 Brave Phones Kampala | Designed by Bravehart Digital
+  <div class="container">
+    <p><strong>© 2026 Brave Phones Kampala</strong></p>
+    <p>Quality Smartphones | Trusted Service | Nationwide Delivery</p>
+    <p style="margin-top: 15px; opacity: 0.7;">Designed by Bravehart Digital</p>
+  </div>
 </footer>
 
 </body>
